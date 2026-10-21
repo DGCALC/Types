@@ -45,6 +45,9 @@ struct MachineType {
     friend class Super;
 public: // static fields:
 
+   using Scalar = MT;
+   using Under = MT;
+
     // static, constant expression-initialized, const:
     static constexpr size_t size = 1;
     static constexpr size_t cosize = 1;
