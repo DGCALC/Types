@@ -67,7 +67,7 @@ public: // ctor:
 
     explicit MachineType(): data(0) {}
 
-    explicit MachineType(MT in): data(in) {}
+    MachineType(MT in): data(in) {}
 
     // machine type from string,
     // default base is base 10.
@@ -118,6 +118,14 @@ public: // ctor:
             assert(0 == 1);
         }
     }
+
+   // Explicit conversion prevents silent coercion.
+   //  Supported since C++11.
+   // Note: Implicit conversion is not recommended
+   // by the C++ Core Guidlelines.
+   explicit operator MT() const {
+      return data;
+   }
 
 public: // copy:
 
