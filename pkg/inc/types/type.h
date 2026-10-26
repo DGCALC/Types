@@ -30,6 +30,7 @@
 #pragma once
 
 #include <string>
+#include <cstring>
 
 struct Type {
 
